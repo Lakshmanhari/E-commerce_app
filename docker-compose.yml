@@ -1,0 +1,7 @@
+version: '3'
+
+services:
+  web:
+    image: devops-app
+    ports:
+      - "80:80"
