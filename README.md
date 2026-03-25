@@ -31,9 +31,9 @@ EXPOSE 80
 
 CMD ["nginx", "-g", "daemon off;"]
 ```
-#🔹 STEP 2 — Build Docker Image
+**🔹 STEP 2 — Build Docker Image**
 
-🛠 Tool: Terminal
+#**🛠 Tool: Terminal**
 ```
 docker build -t devops-app .
 ```
