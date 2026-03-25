@@ -1,0 +1,11 @@
+groups:
+  - name: test-alert
+    rules:
+      - alert: AppDown
+        expr: up == 0
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Instance Down"
+          description: "App is not reachable"

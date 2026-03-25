@@ -1,0 +1,11 @@
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: 'node'
+    static_configs:
+      - targets: ['172.31.45.113:9100']   # replace with your privat>
+
+rule_files:
+  - "alert.rules.yml"
+
