@@ -31,7 +31,7 @@ EXPOSE 80
 
 CMD ["nginx", "-g", "daemon off;"]
 ```
-🔹 STEP 2 — Build Docker Image
+#🔹 STEP 2 — Build Docker Image
 
 🛠 Tool: Terminal
 ```
@@ -44,7 +44,7 @@ docker run -d -p 80:80 devops-app
 👉 Open in browser:
 http://localhost
 
-🔹 STEP 4 — Docker Compose
+#**🔹 STEP 4 — Docker Compose**
 
 Create docker-compose.yml
 ```
