@@ -33,7 +33,7 @@ CMD ["nginx", "-g", "daemon off;"]
 ```
 **🔹 STEP 2 — Build Docker Image**
 
-#**🛠 Tool: Terminal**
+**🛠 Tool: Terminal**
 ```
 docker build -t devops-app .
 ```
@@ -44,7 +44,7 @@ docker run -d -p 80:80 devops-app
 👉 Open in browser:
 http://localhost
 
-#**🔹 STEP 4 — Docker Compose**
+**🔹 STEP 4 — Docker Compose**
 
 Create docker-compose.yml
 ```
@@ -61,8 +61,8 @@ Run:
 docker-compose up -d
 ```
 
-🚀 VERSION CONTROL (GIT)
- Create GitHub Repo
+**🚀 VERSION CONTROL (GIT)**
+ **Create GitHub Repo**
 👉 Create new repo:
 
  Name: devops-app
@@ -81,7 +81,7 @@ node_modules/
 .git
 node_modules
 ```
-🔹 Create Branches
+**🔹 Create Branches**
 
 ✅ Step 1: Create dev branch
 ```
@@ -99,11 +99,11 @@ git checkout -b master
 ```
 git push origin master
 ```
-🎯 Branch Strategy
+**🎯 Branch Strategy**
 dev → Development & testing
 master → Production and Final stable code  Production deployment
 
-🚀 DOCKER HUB SETUP
+**🚀 DOCKER HUB SETUP**
 🔹 Create Repositories
 ```
 yourdockerhub/dev → Public
@@ -113,8 +113,8 @@ yourdockerhub/prod → Private
 ```
 docker login
 ```
-🚀 BASH SCRIPTS
-🔹 build.sh
+**🚀 BASH SCRIPTS**
+**🔹 build.sh**
 ```
 #!/bin/bash
 
@@ -125,7 +125,7 @@ docker push lakshmanhari/dev:latest
 
 echo "Build and push completed!"
 ```
-🔹 deploy.sh
+**🔹 deploy.sh**
 ```
 #!/bin/bash
 
@@ -141,14 +141,14 @@ docker run -d -p 80:80 --name app-container lakshmanhari/prod:latest
 echo "Deployment completed!"
 ```
 
-🚀 JENKINS SETUP
+**🚀 JENKINS SETUP**
 🔹 Install Jenkins & Docker (EC2)
 ```
 sudo apt update
 sudo apt install docker.io -y
 sudo systemctl start docker
 ```
-🔹Install Jenkins
+**🔹Install Jenkins**
 ```
 sudo apt update
 sudo apt install fontconfig openjdk-21-jre
@@ -164,43 +164,43 @@ echo "deb [signed-by=/etc/apt/keyrings/jenkins-keyring.asc]" \
 sudo apt update
 sudo apt install Jenkins
 ```
-🔹 Fix Docker Permission
+**🔹 Fix Docker Permission**
 ```
 sudo usermod -aG docker jenkins
 sudo systemctl restart jenkins
 ```
-🔹 Docker Login for Jenkins
+**🔹 Docker Login for Jenkins**
 ```
 sudo su - jenkins
 docker login
 exit
 ```
-🔹 DEV JOB
+**🔹 DEV JOB**
 
 Branch: dev
 Build Step:
 ```
 bash build.sh
 ```
-🔹 PROD JOB
+**🔹 PROD JOB**
 Branch: master
 Build Step:
 ```
 bash build.sh
 ```
 
-🔹 Enable Webhook
+**🔹 Enable Webhook**
 
 GitHub → Settings → Webhooks
 ```
 http://<EC2-IP>:8080/github-webhook/
 ```
 
-🚀 AWS EC2 SETUP
+**🚀 AWS EC2 SETUP**
  Launched :linux (Ec2)
  instance type: t2.micro
 
-🔹 Instance Security Group Configuration
+**🔹 Instance Security Group Configuration**
 ```
 Port  | Access
 ______|__________    
@@ -211,7 +211,7 @@ ______|__________
 3000	| 0.0.0.0/0
 ```
 
-🚀 MONITORING (PROMETHEUS + GRAFANA)
+**🚀 MONITORING (PROMETHEUS + GRAFANA)**
 🔹 STEP 1 — Node Exporter
 ```
 docker run -d -p 9100:9100 prom/node-exporter
@@ -283,7 +283,7 @@ docker stop <node-exporter-id>
 
 InstanceDown → FIRING
 
-🎉 FINAL RESULT
+**🎉 FINAL RESULT**
 
 ✔ CI/CD Pipeline (Jenkins)
 ✔ Dockerized Application
