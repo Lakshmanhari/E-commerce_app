@@ -30,7 +30,7 @@ COPY build/ /usr/share/nginx/html/
 EXPOSE 80
 
 CMD ["nginx", "-g", "daemon off;"]
-
+```
 🔹 STEP 2 — Build Docker Image
 
 🛠 Tool: Terminal
